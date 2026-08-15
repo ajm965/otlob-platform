@@ -12,3 +12,14 @@ export type {
   SortOptions,
   StatusFilter,
 } from './query_contracts';
+export type {
+  CommandDto,
+  CoordinatesDto,
+  CursorPageRequestDto,
+  CursorPageResponseDto,
+  DateRangeDto,
+  EntityIdDto,
+  MarketScopeDto,
+  MoneyDto,
+  QueryDto,
+} from './dto_contracts';
