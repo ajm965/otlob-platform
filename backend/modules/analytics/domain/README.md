@@ -2,21 +2,8 @@
 
 ## Purpose
 
-Pure domain layer for the `analytics` module.
+Contract-only analytics boundary. Sprint 2.3 intentionally introduced no Analytics entity, so this folder provides only an interface port and types.
 
-## Responsibilities
+## Prohibited
 
-- Entities, value objects, repository ports, domain events, failures, enums
-
-## Dependencies
-
-- No infrastructure or framework imports
-
-## Ownership
-
-Backend domain owners for `analytics`
-
-## Future Implementation Notes
-
-- Keep framework-free
-- Mirror canonical enums from architecture docs
+No event warehouse, data pipeline, provider SDK, query implementation, or business logic.

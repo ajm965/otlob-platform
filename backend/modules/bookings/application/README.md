@@ -1,23 +1,20 @@
-# bookings/application
+# bookings/application contracts
 
 ## Purpose
 
-Application layer (use cases) for `bookings`.
+Interface-only repository, query, command, filter, sorting, and pagination contracts for `bookings`.
 
-## Responsibilities
+## Contract Placement
 
-- Orchestrate domain operations via use cases
-- DTOs, validators, application services, inbound/outbound interfaces
+- The canonical repository port is in `domain/repositories/`, per the Engineering Handbook.
+- `application/repositories/` re-exports that port; it never defines a duplicate.
+- Queries and commands are shape-only application contracts. They do not execute workflows.
 
 ## Dependencies
 
-- `bookings/domain` only for business types
-- Other modules via interfaces
+- `bookings/domain`
+- `@otlob/core` contract and pagination types
 
-## Ownership
+## Prohibited
 
-Backend application owners for `bookings`
-
-## Future Implementation Notes
-
-- Idempotency and authorization checks belong here or in shared middleware later
+No persistence, cloud SDK, HTTP, REST, use-case, DTO mapping, controller, framework, or business logic implementation.

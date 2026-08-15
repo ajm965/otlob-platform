@@ -3,3 +3,4 @@ export { BookingId } from './entities/booking_id';
 export { BookingStatus } from './enums/booking_status';
 export { BookingConfirmed } from './events/booking_confirmed';
 export { BookingCompleted } from './events/booking_completed';
+export type { IBookingRepository, BookingFilter } from './repositories/i_bookings_repository';

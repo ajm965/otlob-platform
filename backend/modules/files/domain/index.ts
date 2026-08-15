@@ -4,3 +4,4 @@ export { AttachmentPurpose } from './enums/attachment_purpose';
 export { AttachmentStatus } from './enums/attachment_status';
 export { ContentType } from './value_objects/content_type';
 export { AttachmentUploaded } from './events/attachment_uploaded';
+export type { IAttachmentRepository, AttachmentFilter } from './repositories/i_files_repository';

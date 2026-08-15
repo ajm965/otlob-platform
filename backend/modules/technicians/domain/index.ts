@@ -5,3 +5,4 @@ export { TechnicianStatus } from './enums/technician_status';
 export { ServiceRadiusKm } from './value_objects/service_radius_km';
 export { TechnicianVerified } from './events/technician_verified';
 export { TechnicianProfileUpdated } from './events/technician_profile_updated';
+export type { ITechnicianRepository, TechnicianFilter } from './repositories/i_technicians_repository';
