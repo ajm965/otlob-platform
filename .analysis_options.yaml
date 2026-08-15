@@ -1,0 +1,14 @@
+# Placeholder analyzer configuration for future Dart packages/apps.
+# Phase 2.1: structure only — no Dart packages are implemented yet.
+include: package:lints/recommended.yaml
+
+analyzer:
+  exclude:
+    - build/**
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+
+linter:
+  rules:
+    prefer_const_constructors: true
+    avoid_print: true

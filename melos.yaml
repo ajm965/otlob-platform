@@ -1,0 +1,21 @@
+name: otlob_platform
+repository: https://github.com/otlob-platform/otlob-platform
+
+# Phase 2.1 skeleton: package discovery paths reserved for future Dart packages/apps.
+packages:
+  - apps/**
+  - packages/**
+
+command:
+  bootstrap:
+    runPubGetInParallel: true
+
+ide:
+  intellij:
+    enabled: false
+
+scripts:
+  analyze:
+    run: echo "Phase 2.1 skeleton — analyze script reserved for later implementation"
+  test:
+    run: echo "Phase 2.1 skeleton — test script reserved for later implementation"

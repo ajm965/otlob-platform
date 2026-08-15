@@ -1,0 +1,12 @@
+# Default owners — replace GitHub handles when teams are provisioned.
+* @otlob-platform/platform-leads
+
+/docs/ @otlob-platform/architecture
+/backend/modules/finance/ @otlob-platform/backend @otlob-platform/finance
+/backend/modules/payments/ @otlob-platform/backend @otlob-platform/finance
+/backend/modules/wallet/ @otlob-platform/backend @otlob-platform/finance
+/backend/modules/ @otlob-platform/backend
+/apps/ @otlob-platform/mobile
+/packages/ @otlob-platform/platform-leads
+/config/security/ @otlob-platform/security
+/.github/ @otlob-platform/platform-leads

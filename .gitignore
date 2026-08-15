@@ -1,0 +1,57 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Env & secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.p12
+service-account*.json
+**/secrets/
+**/credentials/
+
+# Dart / Flutter
+.dart_tool/
+.packages
+.pub-cache/
+.pub/
+build/
+**/doc/api/
+.flutter-plugins
+.flutter-plugins-dependencies
+.melos_tool/
+
+# Node / Functions (future)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+dist/
+coverage/
+.nyc_output/
+lib-cov/
+
+# Firebase (future local)
+.firebase/
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+
+# Logs & caches
+*.log
+.cache/
+tmp/
+temp/
+
+# Generated
+*.g.dart
+*.freezed.dart
+*.mocks.dart
