@@ -1,0 +1,18 @@
+{
+  "name": "otlob-platform",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Otlob Platform monorepo",
+  "workspaces": [
+    "packages/core",
+    "backend"
+  ],
+  "scripts": {
+    "build": "npm run build -w @otlob/core && npm run build -w @otlob/backend",
+    "build:core": "npm run build -w @otlob/core",
+    "build:domain": "npm run build -w @otlob/backend"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

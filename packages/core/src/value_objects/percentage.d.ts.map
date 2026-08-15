@@ -1,0 +1,1 @@
+{"version":3,"file":"percentage.d.ts","sourceRoot":"","sources":["percentage.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,eAAe,EAAE,MAAM,2BAA2B,CAAC;AAE5D,sEAAsE;AACtE,qBAAa,UAAW,SAAQ,eAAe;aACT,WAAW,EAAE,MAAM;IAAvD,OAAO;WAIO,eAAe,CAAC,WAAW,EAAE,MAAM,GAAG,UAAU;IAO9D,SAAS,KAAK,kBAAkB,IAAI,SAAS,OAAO,EAAE,CAErD;CACF"}

@@ -2,69 +2,38 @@
 
 ## Purpose
 
-**Single shared foundation package** intended as the common dependency for every backend module and shared package.
+Single shared foundation package used by every domain module.
 
-Phase 2.2 establishes structure and documentation placeholders only.
+## Phase
 
-## Responsibilities
+- 2.2 — Structure placeholders
+- **2.3 — Core domain primitives implemented (TypeScript)**
 
-- Base domain abstractions (`BaseEntity`, `AggregateRoot`, `UniqueId`, `BaseValueObject`, `DomainEvent`)
-- Reusable value objects (Money, Email, Phone, Address, Coordinates, GeoPoint, Percentage, DateRange)
-- Result / Failure / Exception patterns
-- Pagination models
-- Cross-cutting ports (logger, clock, uuid, validator, serializer, cache, event bus)
-- Generic validators, types, utils, constants, serialization hooks
+## Implemented (Domain Foundation)
+
+### Base
+`UniqueId`, `BaseValueObject`, `BaseEntity`, `AggregateRoot`, `DomainEvent`
+
+### Value Objects
+`Money`, `Email`, `Phone`, `Address`, `Coordinates`, `GeoPoint`, `Percentage`, `DateRange`
 
 ## Non-Responsibilities
 
-- Firebase / Firestore
+- Firebase / Firestore types
 - HTTP / REST
 - Flutter / UI
-- Feature or marketplace business logic
-- Module-specific entities (`Booking`, `Offer`, etc.)
+- Feature entities (`User`, `Booking`, … live in `backend/modules/*/domain`)
+- Repository / use-case implementations
 
-## Dependencies
+## Usage
 
-### Current (Phase 2.2)
-
-- None (documentation/skeleton only)
-
-### Future
-
-- Language standard library only for core implementations
-- Adapters for ILogger/ICache/etc. live outside this package
-- Align money/time/pagination with `docs/` Architecture Review V2 baseline
-
-## Ownership
-
-Platform core library owners (`CODEOWNERS` → packages)
-
-## Layout
-
-```text
-packages/core/
-├── README.md
-├── src/
-│   ├── base/
-│   ├── entities/
-│   ├── value_objects/
-│   ├── result/
-│   ├── failures/
-│   ├── exceptions/
-│   ├── events/
-│   ├── types/
-│   ├── validators/
-│   ├── pagination/
-│   ├── utils/
-│   ├── logging/
-│   ├── contracts/
-│   ├── interfaces/
-│   ├── constants/
-│   ├── extensions/
-│   └── serialization/
-└── test/
+```ts
+import { Money, UniqueId, AggregateRoot } from '@otlob/core';
 ```
 
-## Phase Constraint
+## Build
 
-Phase 2.2 — **no implementation**. Placeholder Markdown files document future API surfaces only.
+```bash
+npm install
+npm run build
+```

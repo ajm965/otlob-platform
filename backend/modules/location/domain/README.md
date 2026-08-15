@@ -2,21 +2,20 @@
 
 ## Purpose
 
-Pure domain layer for the `location` module.
+Pure domain model for **Address (SavedAddress)**.
 
-## Responsibilities
+## Contents
 
-- Entities, value objects, repository ports, domain events, failures, enums
+- Entity + EntityId
+- Enums
+- Domain-specific value objects (if any)
+- Domain event placeholders
+- README
 
-## Dependencies
+## Rules
 
-- No infrastructure or framework imports
+- No Firebase, HTTP, Flutter, repositories, use cases, controllers, or DTO mapping
+- Reuse `@otlob/core` shared value objects
+- No business workflows — structural domain model only
 
-## Ownership
-
-Backend domain owners for `location`
-
-## Future Implementation Notes
-
-- Keep framework-free
-- Mirror canonical enums from architecture docs
+Entity name `SavedAddress` to distinguish from core `Address` value object.

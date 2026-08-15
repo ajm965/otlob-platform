@@ -1,0 +1,1 @@
+{"version":3,"file":"localized_label.d.ts","sourceRoot":"","sources":["localized_label.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,eAAe,EAAE,MAAM,2BAA2B,CAAC;AAE5D,gEAAgE;AAChE,qBAAa,cAAe,SAAQ,eAAe;aAE/B,EAAE,EAAE,MAAM;aACV,EAAE,EAAE,MAAM;IAF5B,OAAO;WAOO,MAAM,CAAC,EAAE,EAAE,MAAM,EAAE,EAAE,EAAE,MAAM,GAAG,cAAc;IAO5D,SAAS,KAAK,kBAAkB,IAAI,SAAS,OAAO,EAAE,CAErD;CACF"}

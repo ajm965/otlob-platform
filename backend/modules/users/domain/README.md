@@ -2,21 +2,18 @@
 
 ## Purpose
 
-Pure domain layer for the `users` module.
+Pure domain model for **User**.
 
-## Responsibilities
+## Contents
 
-- Entities, value objects, repository ports, domain events, failures, enums
+- Entity + EntityId
+- Enums
+- Domain-specific value objects (if any)
+- Domain event placeholders
+- README
 
-## Dependencies
+## Rules
 
-- No infrastructure or framework imports
-
-## Ownership
-
-Backend domain owners for `users`
-
-## Future Implementation Notes
-
-- Keep framework-free
-- Mirror canonical enums from architecture docs
+- No Firebase, HTTP, Flutter, repositories, use cases, controllers, or DTO mapping
+- Reuse `@otlob/core` for Money, Email, Phone, Address, Coordinates, GeoPoint, Percentage, DateRange
+- No business workflows — structural domain model only

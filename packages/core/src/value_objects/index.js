@@ -1,0 +1,22 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.LocalizedLabel = exports.DateRange = exports.Percentage = exports.GeoPoint = exports.Coordinates = exports.Address = exports.Phone = exports.Email = exports.Money = void 0;
+var money_1 = require("./money");
+Object.defineProperty(exports, "Money", { enumerable: true, get: function () { return money_1.Money; } });
+var email_1 = require("./email");
+Object.defineProperty(exports, "Email", { enumerable: true, get: function () { return email_1.Email; } });
+var phone_1 = require("./phone");
+Object.defineProperty(exports, "Phone", { enumerable: true, get: function () { return phone_1.Phone; } });
+var address_1 = require("./address");
+Object.defineProperty(exports, "Address", { enumerable: true, get: function () { return address_1.Address; } });
+var coordinates_1 = require("./coordinates");
+Object.defineProperty(exports, "Coordinates", { enumerable: true, get: function () { return coordinates_1.Coordinates; } });
+var geo_point_1 = require("./geo_point");
+Object.defineProperty(exports, "GeoPoint", { enumerable: true, get: function () { return geo_point_1.GeoPoint; } });
+var percentage_1 = require("./percentage");
+Object.defineProperty(exports, "Percentage", { enumerable: true, get: function () { return percentage_1.Percentage; } });
+var date_range_1 = require("./date_range");
+Object.defineProperty(exports, "DateRange", { enumerable: true, get: function () { return date_range_1.DateRange; } });
+var localized_label_1 = require("./localized_label");
+Object.defineProperty(exports, "LocalizedLabel", { enumerable: true, get: function () { return localized_label_1.LocalizedLabel; } });
+//# sourceMappingURL=index.js.map

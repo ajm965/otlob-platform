@@ -1,0 +1,1 @@
+{"version":3,"file":"phone.d.ts","sourceRoot":"","sources":["phone.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,eAAe,EAAE,MAAM,2BAA2B,CAAC;AAE5D,uCAAuC;AACvC,qBAAa,KAAM,SAAQ,eAAe;aACJ,IAAI,EAAE,MAAM;IAAhD,OAAO;WAIO,MAAM,CAAC,IAAI,EAAE,MAAM,GAAG,KAAK;IAQzC,SAAS,KAAK,kBAAkB,IAAI,SAAS,OAAO,EAAE,CAErD;CACF"}
