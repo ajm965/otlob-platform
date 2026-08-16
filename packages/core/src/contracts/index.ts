@@ -23,3 +23,4 @@ export type {
   MoneyDto,
   QueryDto,
 } from './dto_contracts';
+export type { IUseCase } from './use_case_contracts';
