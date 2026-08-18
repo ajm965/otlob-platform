@@ -4,9 +4,13 @@ import { AddressInfo } from 'node:net';
 import { test } from 'node:test';
 import {
   createSeededCategoryRepository,
+  createSeededRequestRepository,
   createSeededServiceRepository,
+  CreateRequestUseCase,
+  GetRequestUseCase,
   GetServiceUseCase,
   ListCategorysUseCase,
+  ListRequestsUseCase,
   ListServicesUseCase,
 } from '@otlob/backend';
 import { loadAppConfig } from '../../config/app_config';
@@ -18,11 +22,15 @@ import { StructuredLogger } from '../../infrastructure/logging/structured_logger
 function createCatalogApp() {
   const config = loadAppConfig({ FIREBASE_PROJECT_ID: 'otlob-test', OTLB_ENV: 'development' });
   const container = new Container();
+  const requestRepository = createSeededRequestRepository();
   container.register(tokens.config, config);
   container.register(tokens.logger, new StructuredLogger(config));
   container.register(tokens.listCategoriesUseCase, new ListCategorysUseCase(createSeededCategoryRepository()));
   container.register(tokens.listServicesUseCase, new ListServicesUseCase(createSeededServiceRepository()));
   container.register(tokens.getServiceUseCase, new GetServiceUseCase(createSeededServiceRepository()));
+  container.register(tokens.createRequestUseCase, new CreateRequestUseCase(requestRepository));
+  container.register(tokens.getRequestUseCase, new GetRequestUseCase(requestRepository));
+  container.register(tokens.listRequestsUseCase, new ListRequestsUseCase(requestRepository));
   return createHttpApp(container);
 }
 

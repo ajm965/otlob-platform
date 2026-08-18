@@ -5,4 +5,7 @@ export const tokens = {
   listCategoriesUseCase: Symbol('ListCategoriesUseCase'),
   listServicesUseCase: Symbol('ListServicesUseCase'),
   getServiceUseCase: Symbol('GetServiceUseCase'),
+  createRequestUseCase: Symbol('CreateRequestUseCase'),
+  getRequestUseCase: Symbol('GetRequestUseCase'),
+  listRequestsUseCase: Symbol('ListRequestsUseCase'),
 } as const;

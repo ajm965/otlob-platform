@@ -1,4 +1,14 @@
-import type { EntityIdDto, MarketScopeDto } from '@otlob/core';
+import type { CoordinatesDto, EntityIdDto, MarketScopeDto } from '@otlob/core';
 
-/** Output shape only; no behavior or conversion code is defined. */
-export interface RequestResponse extends EntityIdDto, MarketScopeDto {}
+/** Customer request projection. Fields map from ServiceRequest + DateRange/GeoPoint. */
+export interface RequestResponse extends EntityIdDto, MarketScopeDto {
+  readonly customerId: string;
+  readonly serviceId: string;
+  readonly status: string;
+  readonly description: string;
+  readonly location: CoordinatesDto | null;
+  readonly preferredTimeStart: string | null;
+  readonly preferredTimeEnd: string | null;
+  readonly acceptedOfferId: string | null;
+  readonly bookingId: string | null;
+}

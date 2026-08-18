@@ -16,3 +16,16 @@ export {
   InMemoryServiceRepository,
   MOCK_SERVICE_IDS,
 } from './modules/services/infrastructure/repositories/in_memory_service_repository';
+export { CreateRequestUseCase } from './modules/requests/application/use_cases/commands/create_request_use_case';
+export type { ICreateRequestUseCase } from './modules/requests/application/use_cases/commands/i_create_request_use_case';
+export { GetRequestUseCase } from './modules/requests/application/use_cases/queries/get_request_use_case';
+export type { IGetRequestUseCase } from './modules/requests/application/use_cases/queries/i_get_request_use_case';
+export { ListRequestsUseCase } from './modules/requests/application/use_cases/queries/list_requests_use_case';
+export type { IListRequestsUseCase } from './modules/requests/application/use_cases/queries/i_list_requests_use_case';
+export { toRequestResponse } from './modules/requests/application/mappers/request_mapper';
+export {
+  createSeededRequestRepository,
+  InMemoryRequestRepository,
+  MOCK_CUSTOMER_IDS,
+  MOCK_REQUEST_IDS,
+} from './modules/requests/infrastructure/repositories/in_memory_request_repository';

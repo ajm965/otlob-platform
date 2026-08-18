@@ -1,8 +1,12 @@
 import {
   createSeededCategoryRepository,
+  createSeededRequestRepository,
   createSeededServiceRepository,
+  CreateRequestUseCase,
+  GetRequestUseCase,
   GetServiceUseCase,
   ListCategorysUseCase,
+  ListRequestsUseCase,
   ListServicesUseCase,
 } from '@otlob/backend';
 import { loadAppConfig, type AppConfig } from './config/app_config';
@@ -24,6 +28,7 @@ export function createCompositionRoot(env: NodeJS.ProcessEnv = process.env): Com
 
   const categoryRepository = createSeededCategoryRepository();
   const serviceRepository = createSeededServiceRepository();
+  const requestRepository = createSeededRequestRepository();
 
   const container = new Container();
   container.register(tokens.config, config);
@@ -32,6 +37,9 @@ export function createCompositionRoot(env: NodeJS.ProcessEnv = process.env): Com
   container.register(tokens.listCategoriesUseCase, new ListCategorysUseCase(categoryRepository));
   container.register(tokens.listServicesUseCase, new ListServicesUseCase(serviceRepository));
   container.register(tokens.getServiceUseCase, new GetServiceUseCase(serviceRepository));
+  container.register(tokens.createRequestUseCase, new CreateRequestUseCase(requestRepository));
+  container.register(tokens.getRequestUseCase, new GetRequestUseCase(requestRepository));
+  container.register(tokens.listRequestsUseCase, new ListRequestsUseCase(requestRepository));
 
   logger.info('platform_bootstrapped', {
     module: 'platform',

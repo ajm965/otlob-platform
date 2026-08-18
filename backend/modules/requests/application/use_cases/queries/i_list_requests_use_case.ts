@@ -1,5 +1,6 @@
-import type { CursorPageResponseDto, IUseCase, QueryDto } from '@otlob/core';
-import type { RequestResponse } from '../../dto';
+import type { CursorPageResponseDto, IUseCase } from '@otlob/core';
+import type { FindPendingRequestsQueryDto, RequestResponse } from '../../dto';
 
 /** Contract only; no listing behavior is implemented. */
-export interface IListRequestsUseCase extends IUseCase<QueryDto, CursorPageResponseDto<RequestResponse>> {}
+export interface IListRequestsUseCase
+  extends IUseCase<FindPendingRequestsQueryDto, CursorPageResponseDto<RequestResponse>> {}

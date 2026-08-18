@@ -10,8 +10,16 @@ import { requestIdMiddleware } from './middleware/request_id_middleware';
 import { registerAuthRoutes } from './routes/auth_routes';
 import { registerCatalogRoutes } from './routes/catalog_routes';
 import { registerHealthRoute } from './routes/health_route';
+import { registerRequestRoutes } from './routes/request_routes';
 import { registerVersionRoute } from './routes/version_route';
-import type { IGetServiceUseCase, IListCategorysUseCase, IListServicesUseCase } from '@otlob/backend';
+import type {
+  ICreateRequestUseCase,
+  IGetRequestUseCase,
+  IGetServiceUseCase,
+  IListCategorysUseCase,
+  IListRequestsUseCase,
+  IListServicesUseCase,
+} from '@otlob/backend';
 
 export function createHttpApp(container: Container): Express {
   const config = container.resolve<AppConfig>(tokens.config);
@@ -27,11 +35,15 @@ export function createHttpApp(container: Container): Express {
   const listCategories = container.resolve<IListCategorysUseCase>(tokens.listCategoriesUseCase);
   const listServices = container.resolve<IListServicesUseCase>(tokens.listServicesUseCase);
   const getService = container.resolve<IGetServiceUseCase>(tokens.getServiceUseCase);
+  const createRequest = container.resolve<ICreateRequestUseCase>(tokens.createRequestUseCase);
+  const getRequest = container.resolve<IGetRequestUseCase>(tokens.getRequestUseCase);
+  const listRequests = container.resolve<IListRequestsUseCase>(tokens.listRequestsUseCase);
 
   registerHealthRoute(app, config);
   registerVersionRoute(app, config);
   registerAuthRoutes(app);
   registerCatalogRoutes(app, { listCategories, listServices, getService });
+  registerRequestRoutes(app, { createRequest, getRequest, listRequests });
 
   app.use(notFoundMiddleware);
   app.use(errorHandlerMiddleware(logger));

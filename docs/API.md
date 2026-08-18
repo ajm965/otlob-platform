@@ -276,6 +276,9 @@ POST /requests
 }
 ```
 
+Persistable write fields today: `serviceId`, `description`, `preferredTimeStart`, `preferredTimeEnd`.  
+`title`, `addressId`, `budgetMinHalalas`, `budgetMaxHalalas`, and `mediaUrls` remain `[MVP]` (`docs/product/ACCEPTANCE_CRITERIA.md` AC-REQ-01/03). Until the `ServiceRequest` aggregate and Address module persist them, `POST /requests` rejects those keys with `validation_failed` (`docs/DATABASE.md` §18; `docs/engineering/API_STANDARDS.md` §1).
+
 **Response:** `201` request
 
 ### 6.2 List my requests

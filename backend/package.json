@@ -8,7 +8,7 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "build:domain": "tsc -p tsconfig.domain.json",
-    "test": "tsc -p tsconfig.json && node --test dist/modules/auth/tests/unit/*.test.js dist/modules/categories/tests/unit/*.test.js dist/modules/services/tests/unit/*.test.js",
+    "test": "tsc -p tsconfig.json && node --test dist/modules/auth/tests/unit/*.test.js dist/modules/categories/tests/unit/*.test.js dist/modules/services/tests/unit/*.test.js dist/modules/requests/tests/unit/*.test.js",
     "clean": "rm -rf dist"
   },
   "dependencies": {
