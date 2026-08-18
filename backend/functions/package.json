@@ -1,0 +1,24 @@
+{
+  "name": "@otlob/functions",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Otlob Cloud Functions host — platform skeleton",
+  "main": "dist/index.js",
+  "engines": {
+    "node": "20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "firebase-admin": "^13.4.0",
+    "firebase-functions": "^6.4.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.17.0",
+    "typescript": "^5.6.3"
+  }
+}

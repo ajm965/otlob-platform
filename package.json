@@ -5,12 +5,14 @@
   "description": "Otlob Platform monorepo",
   "workspaces": [
     "packages/core",
-    "backend"
+    "backend",
+    "backend/functions"
   ],
   "scripts": {
-    "build": "npm run build -w @otlob/core && npm run build -w @otlob/backend",
+    "build": "npm run build -w @otlob/core && npm run build -w @otlob/backend && npm run build -w @otlob/functions",
     "build:core": "npm run build -w @otlob/core",
-    "build:domain": "npm run build -w @otlob/backend"
+    "build:domain": "npm run build -w @otlob/backend",
+    "build:functions": "npm run build -w @otlob/functions"
   },
   "engines": {
     "node": ">=20"

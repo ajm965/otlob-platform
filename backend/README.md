@@ -6,8 +6,9 @@ Server-side monorepo area for Cloud Functions host, security rules placeholders,
 
 ## Responsibilities
 
-- Host `modules/` bounded contexts (structure only in Phase 2.1)
-- Reserve `functions/`, `rules/`, and backend-local `config/` for later implementation phases
+- Host `modules/` bounded contexts (domain/application contracts)
+- Host `functions/` as the Cloud Functions HTTPS platform skeleton
+- Reserve `rules/` and backend-local `config/` for later implementation phases
 - Enforce server-side ownership of marketplace invariants when coding begins
 
 ## Dependencies
@@ -22,16 +23,16 @@ Backend platform team. Finance modules require additional finance review.
 
 ## Future Implementation Notes
 
-- Do not implement Firebase, REST handlers, or business logic in Phase 2.1
-- Existing `functions/`, `rules/`, and `config/` folders remain reserved placeholders
-- Module code will live under `backend/modules/<name>/` following Clean Architecture
+- Feature use cases, repositories, and HTTP controllers stay in `backend/modules/`
+- Firebase Admin and HTTPS bootstrap live in `backend/functions/`
+- Do not add marketplace business logic to the Functions host
 
 ## Layout
 
 ```text
 backend/
 ├── modules/          # Domain modules (Phase 2.1 skeleton)
-├── functions/        # Future Functions entrypoints (reserved)
+├── functions/        # Cloud Functions HTTPS host (platform skeleton)
 ├── rules/            # Future Firestore/Storage rules (reserved)
 ├── config/           # Backend-local config templates (reserved)
 └── README.md
@@ -39,4 +40,4 @@ backend/
 
 ## Phase Constraint
 
-Repository structure only.
+Domain modules remain contract-only until a feature sprint. `functions/` is the executable platform host.
