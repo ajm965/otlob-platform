@@ -3,6 +3,7 @@
  * No use cases, repositories, HTTP, or Firebase.
  */
 export * as Users from './modules/users/domain';
+export * as Auth from './modules/auth/domain';
 export * as Technicians from './modules/technicians/domain';
 export * as Companies from './modules/companies/domain';
 export * as Categories from './modules/categories/domain';

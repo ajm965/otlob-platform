@@ -6,6 +6,7 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "build:domain": "tsc -p tsconfig.domain.json",
+    "test": "tsc -p tsconfig.json && node --test dist/modules/auth/tests/unit/*.test.js",
     "clean": "rm -rf dist"
   },
   "dependencies": {

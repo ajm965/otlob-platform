@@ -12,7 +12,8 @@
     "build": "npm run build -w @otlob/core && npm run build -w @otlob/backend && npm run build -w @otlob/functions",
     "build:core": "npm run build -w @otlob/core",
     "build:domain": "npm run build -w @otlob/backend",
-    "build:functions": "npm run build -w @otlob/functions"
+    "build:functions": "npm run build -w @otlob/functions",
+    "test": "npm run test -w @otlob/backend && npm run test -w @otlob/functions"
   },
   "engines": {
     "node": ">=20"

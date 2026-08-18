@@ -7,6 +7,7 @@ import { errorHandlerMiddleware } from './middleware/error_handler_middleware';
 import { loggingMiddleware } from './middleware/logging_middleware';
 import { notFoundMiddleware } from './middleware/not_found_middleware';
 import { requestIdMiddleware } from './middleware/request_id_middleware';
+import { registerAuthRoutes } from './routes/auth_routes';
 import { registerHealthRoute } from './routes/health_route';
 import { registerVersionRoute } from './routes/version_route';
 
@@ -23,6 +24,7 @@ export function createHttpApp(container: Container): Express {
 
   registerHealthRoute(app, config);
   registerVersionRoute(app, config);
+  registerAuthRoutes(app);
 
   app.use(notFoundMiddleware);
   app.use(errorHandlerMiddleware(logger));
