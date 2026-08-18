@@ -1,3 +1,3 @@
 export type * from './commands';
-export type * from './queries';
+export * from './queries';
 export type * from './interfaces';

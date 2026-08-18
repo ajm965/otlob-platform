@@ -1,5 +1,6 @@
-import type { CursorPageResponseDto, IUseCase, QueryDto } from '@otlob/core';
-import type { ServiceResponse } from '../../dto';
+import type { CursorPageResponseDto, IUseCase } from '@otlob/core';
+import type { SearchServicesQueryDto, ServiceResponse } from '../../dto';
 
 /** Contract only; no listing behavior is implemented. */
-export interface IListServicesUseCase extends IUseCase<QueryDto, CursorPageResponseDto<ServiceResponse>> {}
+export interface IListServicesUseCase
+  extends IUseCase<SearchServicesQueryDto, CursorPageResponseDto<ServiceResponse>> {}

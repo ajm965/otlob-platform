@@ -4,4 +4,5 @@ import type { QueryDto } from '@otlob/core';
 export interface SearchCategoriesQueryDto extends QueryDto {
   readonly marketId?: string;
   readonly countryCode?: string;
+  readonly activeOnly?: boolean;
 }

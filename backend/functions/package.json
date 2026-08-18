@@ -9,13 +9,14 @@
   },
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "test": "tsc -p tsconfig.json && node --test dist/http/routes/auth_routes.test.js",
+    "test": "tsc -p tsconfig.json && node --test dist/http/routes/auth_routes.test.js dist/http/routes/catalog_routes.test.js",
     "clean": "rm -rf dist"
   },
   "dependencies": {
     "express": "^4.21.2",
     "firebase-admin": "^13.4.0",
-    "firebase-functions": "^6.4.0"
+    "firebase-functions": "^6.4.0",
+    "@otlob/backend": "file:.."
   },
   "devDependencies": {
     "@types/express": "^4.17.21",

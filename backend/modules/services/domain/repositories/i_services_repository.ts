@@ -6,6 +6,7 @@ import type { ServiceStatus } from '../enums/service_status';
 export interface ServiceFilter extends StatusFilter<ServiceStatus> {
   readonly marketId?: string;
   readonly countryCode?: string;
+  readonly categoryId?: string;
 }
 
 /** Canonical persistence port; implementation belongs in infrastructure only. */

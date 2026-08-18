@@ -1,4 +1,9 @@
 import type { EntityIdDto, MarketScopeDto } from '@otlob/core';
 
-/** Output shape only; no behavior or conversion code is defined. */
-export interface ServiceResponse extends EntityIdDto, MarketScopeDto {}
+/** Customer catalog service projection. Fields map from Service + LocalizedLabel. */
+export interface ServiceResponse extends EntityIdDto, MarketScopeDto {
+  readonly categoryId: string;
+  readonly nameAr: string;
+  readonly nameEn: string;
+  readonly isActive: boolean;
+}

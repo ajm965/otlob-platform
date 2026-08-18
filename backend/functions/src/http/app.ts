@@ -8,8 +8,10 @@ import { loggingMiddleware } from './middleware/logging_middleware';
 import { notFoundMiddleware } from './middleware/not_found_middleware';
 import { requestIdMiddleware } from './middleware/request_id_middleware';
 import { registerAuthRoutes } from './routes/auth_routes';
+import { registerCatalogRoutes } from './routes/catalog_routes';
 import { registerHealthRoute } from './routes/health_route';
 import { registerVersionRoute } from './routes/version_route';
+import type { IGetServiceUseCase, IListCategorysUseCase, IListServicesUseCase } from '@otlob/backend';
 
 export function createHttpApp(container: Container): Express {
   const config = container.resolve<AppConfig>(tokens.config);
@@ -22,9 +24,14 @@ export function createHttpApp(container: Container): Express {
   app.use(express.json({ limit: '1mb' }));
   app.use(loggingMiddleware(logger));
 
+  const listCategories = container.resolve<IListCategorysUseCase>(tokens.listCategoriesUseCase);
+  const listServices = container.resolve<IListServicesUseCase>(tokens.listServicesUseCase);
+  const getService = container.resolve<IGetServiceUseCase>(tokens.getServiceUseCase);
+
   registerHealthRoute(app, config);
   registerVersionRoute(app, config);
   registerAuthRoutes(app);
+  registerCatalogRoutes(app, { listCategories, listServices, getService });
 
   app.use(notFoundMiddleware);
   app.use(errorHandlerMiddleware(logger));

@@ -54,6 +54,14 @@ function mapError(err: unknown): MappedError {
       details: err.details,
     };
   }
+  if (isCodedFailure(err)) {
+    return {
+      statusCode: statusForCode(err.code),
+      code: err.code,
+      message: err.message,
+      details: err.details ?? {},
+    };
+  }
   if (isMalformedJson(err)) {
     return {
       statusCode: 400,
@@ -72,4 +80,27 @@ function mapError(err: unknown): MappedError {
 
 function isMalformedJson(err: unknown): boolean {
   return err instanceof SyntaxError && 'body' in err;
+}
+
+function isCodedFailure(
+  err: unknown,
+): err is Error & { code: string; details?: Record<string, unknown> } {
+  return err instanceof Error && 'code' in err && typeof (err as { code: unknown }).code === 'string';
+}
+
+function statusForCode(code: string): number {
+  switch (code) {
+    case 'validation_failed':
+      return 400;
+    case 'unauthenticated':
+      return 401;
+    case 'forbidden':
+      return 403;
+    case 'not_found':
+      return 404;
+    case 'not_implemented':
+      return 501;
+    default:
+      return 500;
+  }
 }
